@@ -16,18 +16,16 @@ Bot.on :message do |message|
   message.text    # => 'Hello, bot!'
 
   Bot.deliver(
-    recipient: {
-      id: message.sender
-    },
+    recipient: message.sender,
     message: {
       attachment: {
         type: 'template',
         payload: {
           template_type: 'button',
-          text: 'Human, do you like me?',
+          text: 'Did human like it?',
           buttons: [
-            { type: 'postback', title: 'Yes', payload: 'HARMLESS' },
-            { type: 'postback', title: 'No', payload: 'EXTERMINATE' }
+            { type: 'postback', title: 'Yes', payload: 'HUMAN_LIKED' },
+            { type: 'postback', title: 'No', payload: 'HUMAN_DISLIKED' }
           ]
         }
       }
