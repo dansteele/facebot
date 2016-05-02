@@ -3,7 +3,7 @@ require 'facebook/messenger'
 include Facebook::Messenger
 
 Facebook::Messenger.configure do |config|
-  config.access_token = 'EAAG6WgW...'
+  config.access_token = ENV['PAGE_ACCESS_TOKEN']
   config.verify_token = ENV['FB_TOKEN']
 end
 
