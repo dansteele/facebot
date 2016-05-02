@@ -23,4 +23,4 @@ Bot.on :message do |message|
   )
 end
 
-# Facebook::Messenger::Subscriptions.subscribe
+Facebook::Messenger::Subscriptions.subscribe
