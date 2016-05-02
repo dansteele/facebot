@@ -9,26 +9,12 @@ end
 
 
 Bot.on :message do |message|
-  message.id      # => 'mid.1457764197618:41d102a3e1ae206a38'
-  message.sender  # => { 'id' => '1008372609250235' }
-  message.seq     # => 73
-  message.sent_at # => 2016-04-22 21:30:36 +0200
-  message.text    # => 'Hello, bot!'
-
   Bot.deliver(
     recipient: message.sender,
     message: {
-      attachment: {
-        type: 'template',
-        payload: {
-          template_type: 'button',
-          text: 'Did human like it?',
-          buttons: [
-            { type: 'postback', title: 'Yes', payload: 'HUMAN_LIKED' },
-            { type: 'postback', title: 'No', payload: 'HUMAN_DISLIKED' }
-          ]
-        }
-      }
+      text: "A member of Omnidev will try and get back to you shortly.\
+      If you don't hear from us as quickly as you'd like, please use the contact form at\
+       omnidev.co.uk/contact"
     }
   )
 end
